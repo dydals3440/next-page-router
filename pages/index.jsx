@@ -1,5 +1,14 @@
+import ProductList from '@/components/ProductList';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
 function ProductPage() {
-	return <div>Hello Next</div>;
+	return (
+		<div>
+			<h1>상품 목록 페이지!</h1>
+			<ProductList />
+		</div>
+	);
 }
 
 export default ProductPage;
