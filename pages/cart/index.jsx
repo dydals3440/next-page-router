@@ -1,7 +1,24 @@
-import React from 'react';
+import { fetchCarts } from '@/api';
+import CartHeader from '@/components/cart/CartHeader';
+import CartList from '@/components/cart/CartList';
 
-function CartPage() {
-	return <div>장바구니 페이지!</div>;
+function CartPage({ carts }) {
+	return (
+		<div>
+			<CartHeader />
+			<CartList carts={carts} />
+		</div>
+	);
+}
+
+export async function getServerSideProps(context) {
+	const { data } = await fetchCarts();
+
+	return {
+		props: {
+			carts: data,
+		},
+	};
 }
 
 export default CartPage;
