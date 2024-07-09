@@ -6,17 +6,18 @@ describe('카운터 앱', () => {
 	// 첫 번쨰 테스트 시나리오
 	it('페이지에 진입하면 카운터 앱이 정상적으로 실행 됨(0이 표시된다.)', () => {
 		// <p>{counter}</p>
-		cy.get('[data-cy=counter]').contains(0);
+		// cy.get('[data-cy=counter]').contains(0);
+		cy.getByCy('counter').contains(0);
 	});
 
 	// Second Test
 	it('플러스 버튼을 누르면 카운터 1이 증가한다.', () => {
-		cy.get('[data-cy=add-button]').click();
-		cy.get('[data-cy=counter]').contains(1);
+		cy.getByCy('add-button').click();
+		cy.getByCy('counter').contains(1);
 	});
 
 	it('마이너스 버튼을 누르면 카운터 1이 감소한다.', () => {
-		cy.get('[data-cy=minus-button').click();
-		cy.get('[data-cy=counter]').contains(-1);
+		cy.getByCy('minus-button').click();
+		cy.getByCy('counter').contains(-1);
 	});
 });
