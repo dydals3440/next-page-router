@@ -1,3 +1,3 @@
 export default function CartHeader() {
-	return <h1>장바구니 페이지</h1>;
+	return <h1 data-cy="cart-header">장바구니 페이지</h1>;
 }

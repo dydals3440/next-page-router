@@ -18,5 +18,6 @@ describe('상품 목록 페이지', () => {
 		// assertion (우리가 기대하는 것이, 실제와 동일한지 판단)
 		// 현재 페이지의 url을 뱉음. => 보장.
 		cy.url().should('include', '/cart');
+		cy.getByCy('cart-header').should('be.visible');
 	});
 });
