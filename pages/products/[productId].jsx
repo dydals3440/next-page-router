@@ -17,15 +17,15 @@ export default function ProductDetailPage({ productDetail }) {
 		<div>
 			{/* props 페이지 컴포넌트도, 리액트임, 리액트에서 파라미터의 디스트럭쳐링을 이용해서, 첫번쨰로 들어오는 값은 Props이다 이것을 */}
 			<ProductHeader title={headerTitle} />
-			{isEdit ? (
-				<input value={value} onChange={handleChangeValue} />
-			) : (
-				<h1>{value}</h1>
-			)}
-			<button onClick={() => setIsEdit(prev => !prev)}>
-				{isEdit ? '완료' : '수정'}
-			</button>
-			{/* <ProductInfo productDetail={productDetail} /> */}
+			{/*{isEdit ? (*/}
+			{/*	<input value={value} onChange={handleChangeValue} />*/}
+			{/*) : (*/}
+			{/*	<h1>{value}</h1>*/}
+			{/*)}*/}
+			{/*<button onClick={() => setIsEdit(prev => !prev)}>*/}
+			{/*	{isEdit ? '완료' : '수정'}*/}
+			{/*</button>*/}
+			<ProductInfo productDetail={productDetail} />
 		</div>
 	);
 }

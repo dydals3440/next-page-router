@@ -20,4 +20,18 @@ describe('상품 목록 페이지', () => {
 		cy.url().should('include', '/cart');
 		cy.getByCy('cart-header').should('be.visible');
 	});
+
+	// 세 번째 테스트 시나리오
+	it('상품 목록의 아이템을 클릭하면, 상품 상세 페이지로 이동한다.', () => {
+		// 1. prepare
+		// cy.visit('/')
+
+		// 2. action
+		// product-item이라고하면 30개 다 담아옴 .first로 첫번쨰 돔 엘리먼트만 찾음.
+		// 30개 상품중 1개만 찾고 클릭.
+		cy.getByCy('product-item').first().click();
+
+		// 3. assertion
+		cy.url().should('include', '/products/');
+	});
 });

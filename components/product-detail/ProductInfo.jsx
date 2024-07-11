@@ -30,12 +30,20 @@ export default function ProductInfo({ productDetail }) {
 	return (
 		<div className={styles.container}>
 			<div>
-				<Image src={imageUrl} alt={name} width={250} height={250} />
+				<Image
+					data-cy="product-image"
+					src={imageUrl}
+					alt={name}
+					width={250}
+					height={250}
+				/>
 			</div>
 			<div className={styles.description}>
-				<p>{name}</p>
-				<p>{price}</p>
-				<button onClick={addCart}>장바구니에 담기!</button>
+				<p data-cy="product-name">{name}</p>
+				<p data-cy="product-price">{price}</p>
+				<button data-cy="cart-button" onClick={addCart}>
+					장바구니에 담기!
+				</button>
 			</div>
 		</div>
 	);
